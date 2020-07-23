@@ -99,7 +99,7 @@ image::images/create_pgroup.png[width=800]
 +
 ----
 Name: NiFi Registry
-URL:  http://edge2ai-1.dim.local:18080
+URL:  http://ec2-3-250-186-34.eu-west-1.compute.amazonaws.com:18080
 ----
 +
 image::images/global_controller_settings.png[width=800]
@@ -123,7 +123,7 @@ Flow Name: SensorProcessGroup
 +
 [source]
 ----
-URL: http://edge2ai-1.dim.local:7788/api/v1
+URL: http://ec2-3-250-186-34.eu-west-1.compute.amazonaws.com:7788/api/v1
 ----
 +
 image::images/added_hwx_sr_service.png[width=800]
@@ -197,7 +197,7 @@ Name:                                  Publish to Kafka topic: iot
 +
 [source]
 ----
-Kafka Brokers:                         edge2ai-1.dim.local:9092
+Kafka Brokers:                         ec2-3-250-186-34.eu-west-1.compute.amazonaws.com:9092
 Topic Name:                            iot
 Record Reader:                         JsonTreeReader
 Record Writer:                         JsonRecordSetWriter
@@ -321,7 +321,7 @@ On the *PROPERTIES* tab:
 +
 [source]
 ----
-URL:           http://cdsw.<YOUR_CLUSTER_PUBLIC_IP>.nip.io/api/altus-ds-1/models/call-model
+URL:           http://cdsw.3.250.186.34.nip.io/api/altus-ds-1/models/call-model
 Record Reader: JsonTreeReader
 Record Path:   /response
 ----
@@ -357,7 +357,7 @@ Name: Consume Kafka iot messages
 +
 [source]
 ----
-Kafka Brokers:                        edge2ai-1.dim.local:9092
+Kafka Brokers:                        ec2-3-250-186-34.eu-west-1.compute.amazonaws.com:9092
 Topic Name(s):                        iot
 Topic Name Format:                    names
 Record Reader:                        JsonTreeReader - With schema identifier
@@ -456,7 +456,7 @@ Name: Write to Kudu
 +
 [source]
 ----
-Kudu Masters:     edge2ai-1.dim.local:7051
+Kudu Masters:     ec2-3-250-186-34.eu-west-1.compute.amazonaws.com:7051
 Table Name:       impala::default.sensors
 Record Reader:    JsonTreeReader - With schema identifier
 ----
